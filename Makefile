@@ -4,17 +4,15 @@ VENV := venv
 PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 
-$(VENV)/bin/activate: requirements.txt
-	python3 -m venv $(VENV)
-	$(PIP) install -r requirements.txt
-	touch $(VENV)/bin/activate
+venv: requirements.txt
+	@python3 -m venv $(VENV)
+	@$(PIP) install -r requirements.txt
 
+connect_wifi: venv
+	@$(PYTHON) connect_wifi.py
 
-connect_wifi: $(VENV)/bin/activate
-	$(PYTHON) connect_wifi.py
-
-show_ip: $(VENV)/bin/activate
-	$(PYTHON) show_ip.py
+show_ip: venv
+	@$(PYTHON) show_ip.py
 
 clean:
 	rm -rf $(VENV)
