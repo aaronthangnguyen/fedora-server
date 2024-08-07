@@ -1,5 +1,8 @@
 # FEDORA SERVER
 
+## Apps
+- docker
+
 ## Dynamic DNS
 
 1. Get public IP address by running `curl api.ipify.org`
