@@ -2,7 +2,16 @@ import subprocess
 
 
 def run_command(command):
-    """Run a shell command and return its output."""
+    """
+    Run a shell command and return its output.
+
+    Args:
+        command (str): Shell command to be executed.
+
+    Returns:
+        str: The standard output from the command if successful.
+        None: If command fails, returns None and error message is printed.
+    """
     try:
         result = subprocess.run(
             command, shell=True,
