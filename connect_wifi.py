@@ -30,8 +30,6 @@ def connect_wifi(ssid, password):
     Returns:
         None
     """
-    print(f"Connecting to SSID: {ssid}")
-
     # Check if the SSID is already known
     check_command = f"nmcli connection show | grep {ssid}"
     result = run_command(check_command)
@@ -61,6 +59,8 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
+    print(f"Connecting to SSID: {args.ssid}")
 
     wifi_password = getpass.getpass(prompt='Enter Wi-Fi password: ')
 
