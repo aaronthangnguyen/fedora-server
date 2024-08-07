@@ -9,7 +9,7 @@ venv: requirements.txt
 	@$(PIP) install -r requirements.txt
 
 connect_wifi: venv
-	@$(PYTHON) connect_wifi.py
+	sudo @$(PYTHON) connect_wifi.py
 
 show_ip: venv
 	@$(PYTHON) show_ip.py
