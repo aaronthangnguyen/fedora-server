@@ -1,3 +1,14 @@
+"""
+utils.py
+
+This module contains utility functions used across the application.
+
+Functions:
+    run_command(command: str) -> str:
+        Run a shell command and return its output.
+"""
+
+
 import subprocess
 
 

@@ -13,18 +13,19 @@ Example:
     python connect_wifi.py --ssid MyHomeNetwork
 """
 
+
 import argparse
 import getpass
 from utils import run_command
 
 
-def connect_wifi(ssid, wifi_password):
+def connect_wifi(ssid, password):
     """
     Connect to a Wi-Fi network using nmcli.
 
     Args:
         ssid (str): SSID of Wi-Fi network to connect to.
-        wifi_password (str): Password for Wi-Fi network.
+        password (str): Password for Wi-Fi network.
 
     Returns:
         None
@@ -42,8 +43,7 @@ def connect_wifi(ssid, wifi_password):
     else:
         # SSID is not known, create a new connection
         print("SSID not known, creating new connection...")
-        connect_command = f"nmcli dev wifi connect {
-            ssid} password {wifi_password}"
+        connect_command = f"nmcli dev wifi connect {ssid} password {password}"
 
     result = run_command(connect_command)
     if result:
