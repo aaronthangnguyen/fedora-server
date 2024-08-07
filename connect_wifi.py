@@ -31,7 +31,7 @@ def connect_wifi(ssid, password):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Connect to a Wi-Fi network')
     parser.add_argument(
-        'ssid', type=str,
+        '--ssid', type=str,
         default="NguyenFamily",
         help='SSID of Wi-Fi network'
     )
