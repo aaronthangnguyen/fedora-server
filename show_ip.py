@@ -42,7 +42,8 @@ def get_public_ip():
         None: If there is an error obtaining the public IP address.
     """
     try:
-        response = requests.get("https://api.ipify.org?format=json")
+        response = requests.get(
+            "https://api.ipify.org?format=json", timeout=10)
         response.raise_for_status()
         ip_data = response.json()
         return ip_data['ip']
