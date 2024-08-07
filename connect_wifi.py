@@ -43,8 +43,7 @@ def connect_wifi(ssid, password):
     else:
         # SSID is not known, create a new connection
         print("SSID not known, creating new connection...")
-        connect_command = f"nmcli dev wifi connect {
-            ssid} password {password}"
+        connect_command = f"nmcli dev wifi connect {ssid} password {password}"
 
     result = run_command(connect_command)
     if result:
